@@ -32,4 +32,5 @@ func (c *Core) ServeHTTP(response http.ResponseWriter, request *http.Request) {
 	log.Println("core.router")
 
 	router(ctx)
+
 }
