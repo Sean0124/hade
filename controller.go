@@ -44,3 +44,38 @@ func FooControllerHandler(c *framework.Context) error {
 	}
 	return nil
 }
+
+func UserLoginController(c *framework.Context) error {
+	log.Println("UserLoginController")
+	c.Json(200, "ok, UserLoginController")
+	return nil
+}
+
+func SubjectListController(c *framework.Context) error {
+	log.Println("SubjectListController")
+	c.Json(200, "ok, SubjectListController")
+	return nil
+}
+func SubjectAddController(c *framework.Context) error {
+	log.Println("SubjectAddController")
+	c.Json(200, "ok, SubjectAddController")
+	return nil
+}
+
+func SubjectDelController(c *framework.Context) error {
+	log.Println("SubjectDelController")
+	c.Json(200, "ok, SubjectDelController")
+	return nil
+}
+
+func SubjectUpdateController(c *framework.Context) error {
+	log.Println("SubjectUpdateController")
+	c.Json(200, "ok, SubjectUpdateController")
+	return nil
+}
+
+func SubjectGetController(c *framework.Context) error {
+	log.Println("SubjectGetController")
+	c.Json(200, "ok, SubjectGetController")
+	return nil
+}
