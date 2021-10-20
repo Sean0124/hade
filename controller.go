@@ -79,3 +79,9 @@ func SubjectGetController(c *framework.Context) error {
 	c.Json(200, "ok, SubjectGetController")
 	return nil
 }
+
+func SubjectNameController(c *framework.Context) error {
+	log.Println("SubjectNameController")
+	c.Json(200, "ok, SubjectNameController")
+	return nil
+}
