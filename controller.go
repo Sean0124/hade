@@ -24,7 +24,7 @@ func FooControllerHandler(c *framework.Context) error {
 		}()
 		// Do real action
 		time.Sleep(1 * time.Second)
-		c.Json(200, "ok")
+		c.SetStatus(200).Json("ok")
 
 		finish <- struct{}{}
 	}()
@@ -33,13 +33,13 @@ func FooControllerHandler(c *framework.Context) error {
 		c.WriterMux().Lock()
 		defer c.WriterMux().Unlock()
 		log.Println(p)
-		c.Json(500, "panic")
+		c.SetStatus(200).Json("panic")
 	case <-finish:
 		fmt.Println("finish")
 	case <-durationCtx.Done():
 		c.WriterMux().Lock()
 		defer c.WriterMux().Unlock()
-		c.Json(500, "time out")
+		c.SetStatus(200).Json("time out")
 		c.SetHasTimeout()
 	}
 	return nil
@@ -47,41 +47,41 @@ func FooControllerHandler(c *framework.Context) error {
 
 func UserLoginController(c *framework.Context) error {
 	log.Println("UserLoginController")
-	c.Json(200, "ok, UserLoginController")
+	c.SetStatus(200).Json("ok, UserLoginController")
 	return nil
 }
 
 func SubjectListController(c *framework.Context) error {
 	log.Println("SubjectListController")
-	c.Json(200, "ok, SubjectListController")
+	c.SetStatus(200).Json("ok, SubjectListController")
 	return nil
 }
 func SubjectAddController(c *framework.Context) error {
 	log.Println("SubjectAddController")
-	c.Json(200, "ok, SubjectAddController")
+	c.SetStatus(200).Json("ok, SubjectAddController")
 	return nil
 }
 
 func SubjectDelController(c *framework.Context) error {
 	log.Println("SubjectDelController")
-	c.Json(200, "ok, SubjectDelController")
+	c.SetStatus(200).Json("ok, SubjectDelController")
 	return nil
 }
 
 func SubjectUpdateController(c *framework.Context) error {
 	log.Println("SubjectUpdateController")
-	c.Json(200, "ok, SubjectUpdateController")
+	c.SetStatus(200).Json("ok, SubjectUpdateController")
 	return nil
 }
 
 func SubjectGetController(c *framework.Context) error {
 	log.Println("SubjectGetController")
-	c.Json(200, "ok, SubjectGetController")
+	c.SetStatus(200).Json("ok, SubjectGetController")
 	return nil
 }
 
 func SubjectNameController(c *framework.Context) error {
 	log.Println("SubjectNameController")
-	c.Json(200, "ok, SubjectNameController")
+	c.SetStatus(200).Json("ok, SubjectNameController")
 	return nil
 }
