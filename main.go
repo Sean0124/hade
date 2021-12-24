@@ -1,10 +1,16 @@
 package main
 
 import (
-	"coredemo/framework"
-	"coredemo/framework/middleware"
+	"context"
 	"log"
 	"net/http"
+	"os"
+	"os/signal"
+	"syscall"
+	"time"
+
+	"github.com/Sean0124/hade/framework"
+	"github.com/Sean0124/hade/framework/middleware"
 )
 
 func main() {
@@ -24,6 +30,21 @@ func main() {
 		Handler: core,
 		Addr:    ":8080",
 	}
+	go func() {
+		server.ListenAndServe()
+	}()
+	// 当前的 Goroutine 等待信号量
+	quit := make(chan os.Signal)
+	// 监控信号：SIGINT, SIGTERM, SIGQUIT
+	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
+	// 这里会阻塞当前 Goroutine 等待信号
+	<-quit
 
-	log.Fatal(server.ListenAndServe())
+	// 调用Server.Shutdown graceful结束
+	timeoutCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	if err := server.Shutdown(timeoutCtx); err != nil {
+		log.Fatal("Server Shutdown:", err)
+	}
 }

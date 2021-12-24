@@ -1,8 +1,9 @@
 package middleware
 
 import (
-	"coredemo/framework"
 	"fmt"
+
+	"github.com/Sean0124/hade/framework"
 )
 
 func Test1() framework.ControllerHandler {

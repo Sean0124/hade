@@ -2,13 +2,14 @@ package main
 
 import (
 	"context"
-	"coredemo/framework"
 	"fmt"
 	"log"
 	"time"
+
+	"github.com/Sean0124/hade/framework/gin"
 )
 
-func FooControllerHandler(c *framework.Context) error {
+func FooControllerHandler(c *gin.Context) error {
 	finish := make(chan struct{}, 1)
 	panicChan := make(chan interface{}, 1)
 
@@ -45,42 +46,45 @@ func FooControllerHandler(c *framework.Context) error {
 	return nil
 }
 
-func UserLoginController(c *framework.Context) error {
-	log.Println("UserLoginController")
-	c.SetStatus(200).Json("ok, UserLoginController")
+func UserLoginController(c *gin.Context) error {
+	foo, _ := c.QueryString("foo", "def")
+	// 等待10s才结束执行
+	time.Sleep(10 * time.Second)
+	// 输出结果
+	c.SetOkStatus().Json("ok, UserLoginController: " + foo)
 	return nil
 }
 
-func SubjectListController(c *framework.Context) error {
+func SubjectListController(c *gin.Context) error {
 	log.Println("SubjectListController")
 	c.SetStatus(200).Json("ok, SubjectListController")
 	return nil
 }
-func SubjectAddController(c *framework.Context) error {
+func SubjectAddController(c *gin.Context) error {
 	log.Println("SubjectAddController")
 	c.SetStatus(200).Json("ok, SubjectAddController")
 	return nil
 }
 
-func SubjectDelController(c *framework.Context) error {
+func SubjectDelController(c *gin.Context) error {
 	log.Println("SubjectDelController")
 	c.SetStatus(200).Json("ok, SubjectDelController")
 	return nil
 }
 
-func SubjectUpdateController(c *framework.Context) error {
+func SubjectUpdateController(c *gin.Context) error {
 	log.Println("SubjectUpdateController")
 	c.SetStatus(200).Json("ok, SubjectUpdateController")
 	return nil
 }
 
-func SubjectGetController(c *framework.Context) error {
+func SubjectGetController(c *gin.Context) error {
 	log.Println("SubjectGetController")
 	c.SetStatus(200).Json("ok, SubjectGetController")
 	return nil
 }
 
-func SubjectNameController(c *framework.Context) error {
+func SubjectNameController(c *gin.Context) error {
 	log.Println("SubjectNameController")
 	c.SetStatus(200).Json("ok, SubjectNameController")
 	return nil
