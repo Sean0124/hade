@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/Sean0124/hade/framework/gin"
+	"hade/framework/gin"
 )
 
 func FooControllerHandler(c *gin.Context) error {

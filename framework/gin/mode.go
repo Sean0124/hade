@@ -8,7 +8,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/Sean0124/hade/gin/binding"
+	"hade/gin/binding"
 )
 
 // EnvGinMode indicates environment name for gin mode.

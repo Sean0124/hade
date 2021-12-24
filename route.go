@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/Sean0124/hade/framework"
-	"github.com/Sean0124/hade/framework/middleware"
+	"hade/framework"
+	"hade/framework/middleware"
 )
 
 // 注册路由规则

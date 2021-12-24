@@ -3,7 +3,7 @@ package middleware
 import (
 	"time"
 
-	"github.com/Sean0124/hade/framework"
+	"hade/framework"
 )
 
 func TimeoutHandler(fun framework.ControllerHandler, d time.Duration) framework.ControllerHandler {

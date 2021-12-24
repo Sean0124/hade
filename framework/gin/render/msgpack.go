@@ -14,7 +14,7 @@ import (
 )
 
 // Check interface implemented here to support go build tag nomsgpack.
-// See: https://github.com/Sean0124/hade/gin/pull/1852/
+// See: https://hade/gin/pull/1852/
 var (
 	_ Render = MsgPack{}
 )

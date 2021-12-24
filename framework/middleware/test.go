@@ -3,7 +3,7 @@ package middleware
 import (
 	"fmt"
 
-	"github.com/Sean0124/hade/framework"
+	"hade/framework"
 )
 
 func Test1() framework.ControllerHandler {
