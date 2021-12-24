@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"hade/gin/binding"
+	"github.com/Sean0124/hade/framework/gin/binding"
 	"github.com/stretchr/testify/assert"
 )
 

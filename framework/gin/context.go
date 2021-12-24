@@ -20,8 +20,8 @@ import (
 	"sync"
 	"time"
 
-	"hade/gin/binding"
-	"hade/gin/render"
+	"github.com/Sean0124/hade/framework/gin/binding"
+	"github.com/Sean0124/hade/framework/gin/render"
 	"github.com/gin-contrib/sse"
 )
 

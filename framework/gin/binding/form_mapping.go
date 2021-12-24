@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"hade/gin/internal/bytesconv"
-	"hade/gin/internal/json"
+	"github.com/Sean0124/hade/framework/gin/internal/bytesconv"
+	"github.com/Sean0124/hade/framework/gin/internal/json"
 )
 
 var (

@@ -9,8 +9,8 @@ import (
 	"syscall"
 	"time"
 
-	"hade/framework"
-	"hade/framework/middleware"
+	"github.com/Sean0124/hade/framework"
+	"github.com/Sean0124/hade/framework/middleware"
 )
 
 func main() {

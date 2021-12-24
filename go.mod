@@ -1,4 +1,4 @@
-module hade
+module github.com/Sean0124/hade
 
 go 1.16
 
